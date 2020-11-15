@@ -1,5 +1,8 @@
 package de.daniel.ebookservice;
 
+import org.springframework.data.elasticsearch.annotations.Document;
+
+@Document(indexName = "ebook")
 public class Ebook {
 	
 	private final int id;
