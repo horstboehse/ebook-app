@@ -6,6 +6,6 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 
 public interface EbookRepository extends ElasticsearchRepository<Ebook, Integer> {
 	
-	Iterable<Ebook> findByTitle(Optional<String> title);
+	Iterable<Ebook> findByTitle(String title);
 
 }

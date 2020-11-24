@@ -19,15 +19,15 @@ public class EbookAccessController {
 	@Autowired
 	private EbookRepository repository;
 
-	@GetMapping(path = "/{id}") 
+	@GetMapping(path = "/{id}")
 	public Ebook findOne(@PathVariable int id) {
 		return repository.findById(id).orElseThrow();
 	}
 
 	@GetMapping(path = "")
 	public Iterable<Ebook> find(@RequestParam Optional<String> title) {
-		Iterable<Ebook> results = repository.findByTitle(title);
+		Iterable<Ebook> results = title.map(repository::findByTitle).orElseGet(repository::findAll);
 		return StreamSupport.stream(results.spliterator(), false).collect(Collectors.toList());
 	}
-	
+
 }
