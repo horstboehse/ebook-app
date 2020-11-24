@@ -24,12 +24,6 @@ public class EbookServiceApplication implements CommandLineRunner{
 		
 		repository.save(new Ebook(5, "New Paradox"));
 		repository.save(new Ebook(6, "Brave New World"));
-
-		Iterable<Ebook> storedBooks = repository.findAll();
-
-		logger.info("Stored books: {}", storedBooks);
-
-
 	}
 
 }
