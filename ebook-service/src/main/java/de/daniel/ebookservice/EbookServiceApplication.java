@@ -21,9 +21,6 @@ public class EbookServiceApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		repository.save(new Ebook(5, "New Paradox"));
-		repository.save(new Ebook(6, "Brave New World"));
 	}
 
 }

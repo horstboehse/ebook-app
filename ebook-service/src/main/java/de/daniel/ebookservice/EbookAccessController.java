@@ -26,7 +26,7 @@ public class EbookAccessController {
 
 	@GetMapping(path = "")
 	public Iterable<Ebook> find(@RequestParam Optional<String> title) {
-		Iterable<Ebook> results = title.map(repository::findByTitle).orElseGet(repository::findAll);
+		Iterable<Ebook> results = null;//title.map(repository::findByTitles).orElseGet(repository::findAll);
 		return StreamSupport.stream(results.spliterator(), false).collect(Collectors.toList());
 	}
 

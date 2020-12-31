@@ -16,7 +16,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+
+	implementation('com.positiondev.epublib:epublib-core:3.1') {
+		exclude module: 'slf4j-simple'
+	}
+	
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
